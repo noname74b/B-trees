@@ -9,6 +9,10 @@ Node* create_node(int is_leaf);
 
 Node* search(Node* root, int key);
 
+void insert_in_leaf(Node* leaf, int key);
+
+Node* insert_in_root(Node* root, int key) ;
+
 Node* insert(Node* root, int key);
 
 void traverse(Node* root);
