@@ -1,6 +1,6 @@
-run: prog
-	./prog
-prog: main.c trees.o
-	gcc main.c trees.o -o prog
+run: main
+	./main
 trees.o: trees.c trees.h
-	gcc -c trees.c -o trees.o
+	gcc -c trees.c trees.h
+main: trees.o main.c
+	gcc main.c trees.o -o main

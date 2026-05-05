@@ -16,8 +16,8 @@ int main() {
         printf("2. Найти ключ\n");
         printf("3. Обход дерева\n");
         printf("4. Показать структуру\n");
-        printf("5. Демонстрация\n");
-        printf("6. Очистка дерева\n");
+        printf("5. Сбросить дерево\n");
+        printf("6. Демонстрация\n");
         printf("0. Выход\n");
         printf("Выберите: ");
         scanf("%d", &choice);
@@ -50,32 +50,30 @@ int main() {
                 printf("\nСтруктура дерева:\n");
                 print_tree(root, 0);
                 break;
+
+            case 5:
+                printf("Дерево сброшено.\n");
+                free_tree(root);
+                root = NULL;
+                break;
                 
-            case 5: 
+            case 6:
                 printf("\nДемонстрация построения 2-3-дерева:\n");
                 free_tree(root);
                 root = NULL;
-                int numbers[] = {50, 30, 20, 40, 70, 60, 80, 15, 25, 35, 45, 55, 65, 75, 85};
-                int n = sizeof(numbers) / sizeof(numbers[0]);
-    
+                int demo[] = {10, 20, 30, 40, 50, 15, 25, 35};
                 printf("Вставляем числа: ");
-                for (int i = 0; i < n; i++) {
-                    printf("%d ", numbers[i]);
+                for (int i = 0; i < 8; i++) {
+                    printf("%d ", demo[i]);
                 }
                 printf("\n\n");
-                for (int i = 0; i < n; i++) {
-                    root = insert(root, numbers[i]);
-                    printf("После вставки %d:\n", numbers[i]);
+                for (int i = 0; i < 8; i++) {
+                    root = insert(root, demo[i]);
+                    printf("После вставки %d:\n", demo[i]);
                     print_tree(root, 0);
                     printf("\n");
                 }
                 break;
-
-            case 6:
-                free_tree(root);
-                root = NULL;
-                printf("Дерево очищено.\n");
-                break;                
 
             case 0:
                 free_tree(root);
