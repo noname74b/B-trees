@@ -17,6 +17,7 @@ int main() {
         printf("3. Обход дерева\n");
         printf("4. Показать структуру\n");
         printf("5. Демонстрация\n");
+        printf("6. Очистка дерева\n");
         printf("0. Выход\n");
         printf("Выберите: ");
         scanf("%d", &choice);
@@ -69,7 +70,13 @@ int main() {
                     printf("\n");
                 }
                 break;
-                
+
+            case 6:
+                free_tree(root);
+                root = NULL;
+                printf("Дерево очищено.\n");
+                break;                
+
             case 0:
                 free_tree(root);
                 printf("Программа завершена\n");
