@@ -16,8 +16,6 @@ bool is_leaf(Node* node);
 
 void insert_key_into_node(Node* node, int key, Node* left_child, Node* right_child);
 
-void split_node(Node* node, int* middle_key, Node** new_node);
-
 bool insert_helper(Node* node, int key, int* promote_key, Node** promote_node);
 
 Node* insert(Node* root, int key);
